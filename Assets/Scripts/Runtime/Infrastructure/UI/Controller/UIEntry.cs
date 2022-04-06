@@ -6,7 +6,9 @@ using JackFrame;
 
 namespace ActSample {
 
-    public class UIEntryController {
+    public class UIEntry {
+
+        public UIEntry() {}
 
         public void Inject() {
 

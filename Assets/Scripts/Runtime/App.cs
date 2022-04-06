@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
-using ActSample.World;
-using ActSample.World.Controller;
+using ActSample.World.Entry;
+using ActSample.Login.Entry;
 using JackFrame;
 
 namespace ActSample.MainEntry {
@@ -9,42 +9,63 @@ namespace ActSample.MainEntry {
     public class App : MonoBehaviour {
 
         // UI
-        UIEntryController uiEntryController;
+        UIEntry uiEntry;
+
+        // LOGIN
+        LoginEntry loginEntry;
 
         // WORLD
-        WorldFactory worldFactory;
-        WorldLoadController worldLoadController;
+        WorldEntry worldEntry;
 
         void Awake() {
 
-            AppState.isInit = false;
-            AppState.isTearDown = false;
+            AppState.Reset();
+
+            // ==== BIND LOG ====
+            PLog.OnLog += Debug.Log;
+            PLog.OnWarning += Debug.LogWarning;
+            PLog.OnError += Debug.LogError;
+            PLog.OnAssert += (condition, msg) => Debug.Assert(condition, msg);
+            PLog.OnAssertWithoutMessage += (condition) => Debug.Assert(condition);
 
             // ==== CTOR ====
+            // - UI
+            uiEntry = new UIEntry();
+
+            // - LOGIN
+            loginEntry = new LoginEntry();
+
             // - WORLD
-            worldFactory = new WorldFactory();
-            worldLoadController = new WorldLoadController();
+            worldEntry = new WorldEntry();
 
             // ==== INJECT ====
             // - UI
-            uiEntryController.Inject();
+            uiEntry.Inject();
+
+            // - LOGIN
+            loginEntry.Inject();
 
             // - WORLD
-            worldLoadController.Inject(worldFactory);
+            worldEntry.Inject();
 
             // ==== INIT ====
             Action initAction = async () => {
                 try {
-
                     // - UI
-                    await uiEntryController.InitAssets();
+                    await uiEntry.InitAssets();
+
+                    // - LOGIN
+                    loginEntry.Init();
+
+                    // - WORLD
+                    worldEntry.Init();
 
                     AppState.isInit = true;
 
                 } catch (Exception ex) {
 
                     PLog.Error(ex.ToString());
-                    
+
                 }
 
             };
@@ -61,7 +82,8 @@ namespace ActSample.MainEntry {
             }
 
             float dt = Time.deltaTime;
-            worldLoadController.Tick(dt);
+            loginEntry.Tick(dt);
+            worldEntry.Tick(dt);
 
         }
 

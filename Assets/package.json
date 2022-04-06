@@ -1,0 +1,23 @@
+{
+  "name": "actsample",
+  "version": "0.0.1",
+  "description": "",
+  "displayName": "",
+  "unity": "",
+  "author": {
+    "name": "",
+    "email": "none@none.com",
+    "url": "http://www.none.com"
+  },
+  "changelogUrl": "",
+  "dependencies": {
+
+  },
+  "documentationUrl": "",
+  "hideInEditor": false,
+  "keywords": [],
+  "license": "",
+  "licensesUrl": "",
+  "samples": [],
+  "unityRelease": ""
+}

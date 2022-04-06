@@ -132,21 +132,6 @@ $RECYCLE.BIN/
 /[Bb]in/
 
 # 忽略其他仓
-Assets/Config
-Assets/Config.meta
-Assets/Art
-Assets/Art.meta
-Assets/UI
-Assets/UI.meta
-Assets/Scripts/BattleCore
-Assets/Scripts/BattleCore.meta
-Assets/Scripts/BattleVisual
-Assets/Scripts/BattleVisual.meta
-Assets/Scripts/Protocol
-Assets/Scripts/Protocol.meta
-Assets/Plugins/Snet
-Assets/Plugins/Snet.meta
-default.profraw
 
 # For AddressableResourceCollector
 Settings-Generated.asset

@@ -1,0 +1,17 @@
+{
+    "name": "ActSample.Protocol.EditorTool",
+    "rootNamespace": "",
+    "references": [
+        "GUID:030dc892bb11cba4e9d4354d92f29b70",
+        "GUID:72e53efc3db839d40ab26cd2f7fe819d"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

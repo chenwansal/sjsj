@@ -1,5 +1,5 @@
 {
-    "name": "ActSample.Tests",
+    "name": "ActSample.Client.Tests",
     "rootNamespace": "",
     "references": [
         "GUID:36a77b3ae413ad649b3b449d83f4eb33",

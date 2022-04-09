@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace ActSample.World {
+namespace ActSample.Client.World {
 
     public class WorldGo : MonoBehaviour, IEntity {
         

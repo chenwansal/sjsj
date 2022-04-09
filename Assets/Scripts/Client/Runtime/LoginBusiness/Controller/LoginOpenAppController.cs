@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace ActSample.Login.Controller {
+namespace ActSample.Client.Login.Controller {
 
     public class LoginOpenAppController {
 

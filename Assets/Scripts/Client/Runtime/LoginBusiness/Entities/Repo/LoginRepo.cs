@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using JackFrame;
 
-namespace ActSample.Login {
+namespace ActSample.Client.Login {
 
     public class LoginRepo {
 

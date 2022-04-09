@@ -1,7 +1,7 @@
 using System;
 using JackFrame;
 
-namespace ActSample.World.Controller {
+namespace ActSample.Client.World.Controller {
 
     public class WorldLoadController {
 

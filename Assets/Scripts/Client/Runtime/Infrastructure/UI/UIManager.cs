@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using JackFrame;
 
-namespace ActSample {
+namespace ActSample.Client {
 
     public class UIManager : FrameUIManagerBase {
 

@@ -1,10 +1,10 @@
 using System;
 using UnityEngine;
-using ActSample.World.Entry;
-using ActSample.Login.Entry;
+using ActSample.Client.World.Entry;
+using ActSample.Client.Login.Entry;
 using JackFrame;
 
-namespace ActSample.MainEntry {
+namespace ActSample.Client.MainEntry {
 
     public class App : MonoBehaviour {
 

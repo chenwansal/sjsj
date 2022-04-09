@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.AddressableAssets;
 using JackFrame;
 
-namespace ActSample.World {
+namespace ActSample.Client.World {
 
     public class WorldFactory {
 

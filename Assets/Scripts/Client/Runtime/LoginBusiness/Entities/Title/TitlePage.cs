@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using JackFrame;
 
-namespace ActSample.Login {
+namespace ActSample.Client.Login {
 
     public class TitlePage : FrameUIPanelBase {
 

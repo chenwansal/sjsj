@@ -1,6 +1,6 @@
 using System;
 
-namespace ActSample {
+namespace ActSample.Client {
 
     public static class AppState {
         public static bool isInit;

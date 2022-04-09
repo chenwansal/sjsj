@@ -8,6 +8,9 @@ namespace ActSample.Client.MainEntry {
 
     public class App : MonoBehaviour {
 
+        // NETWORK
+        NetworkEntry networkEntry;
+
         // UI
         UIEntry uiEntry;
 
@@ -29,6 +32,9 @@ namespace ActSample.Client.MainEntry {
             PLog.OnAssertWithoutMessage += (condition) => Debug.Assert(condition);
 
             // ==== CTOR ====
+            // - NETWORK
+            networkEntry = new NetworkEntry();
+            
             // - UI
             uiEntry = new UIEntry();
 
@@ -39,6 +45,9 @@ namespace ActSample.Client.MainEntry {
             worldEntry = new WorldEntry();
 
             // ==== INJECT ====
+            // - NETWORK
+            networkEntry.Inject();
+
             // - UI
             uiEntry.Inject();
 
@@ -82,6 +91,8 @@ namespace ActSample.Client.MainEntry {
             }
 
             float dt = Time.deltaTime;
+            networkEntry.Tick();
+
             loginEntry.Tick(dt);
             worldEntry.Tick(dt);
 

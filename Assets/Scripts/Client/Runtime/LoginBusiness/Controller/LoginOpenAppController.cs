@@ -28,6 +28,9 @@ namespace ActSample.Client.Login.Controller {
                 loginRepo.TitlePage = titlePage;
             }
 
+            var client = AllNetwork.NetworkClient;
+            client.Connect("127.0.0.1", 4399);
+
         }
 
         void OnClickEnterGame() {

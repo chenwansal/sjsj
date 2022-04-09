@@ -2,11 +2,12 @@ using System;
 using UnityEngine;
 using ActSample.Client.World.Entry;
 using ActSample.Client.Login.Entry;
+using ActSample.Client.Facades;
 using JackFrame;
 
 namespace ActSample.Client.MainEntry {
 
-    public class App : MonoBehaviour {
+    public class ClientApp : MonoBehaviour {
 
         // NETWORK
         NetworkEntry networkEntry;
@@ -22,7 +23,7 @@ namespace ActSample.Client.MainEntry {
 
         void Awake() {
 
-            AppState.Reset();
+            GlobalAppState.Reset();
 
             // ==== BIND LOG ====
             PLog.OnLog += Debug.Log;
@@ -69,7 +70,7 @@ namespace ActSample.Client.MainEntry {
                     // - WORLD
                     worldEntry.Init();
 
-                    AppState.isInit = true;
+                    GlobalAppState.isInit = true;
 
                 } catch (Exception ex) {
 
@@ -86,7 +87,7 @@ namespace ActSample.Client.MainEntry {
 
         void Update() {
 
-            if (!AppState.isInit) {
+            if (!GlobalAppState.isInit) {
                 return;
             }
 
@@ -100,7 +101,7 @@ namespace ActSample.Client.MainEntry {
 
         void FixedUpdate() {
 
-            if (!AppState.isInit) {
+            if (!GlobalAppState.isInit) {
                 return;
             }
 
@@ -108,7 +109,7 @@ namespace ActSample.Client.MainEntry {
 
         void LateUpdate() {
 
-            if (!AppState.isInit) {
+            if (!GlobalAppState.isInit) {
                 return;
             }
 
@@ -124,11 +125,11 @@ namespace ActSample.Client.MainEntry {
 
         void TearDown() {
 
-            if (AppState.isTearDown) {
+            if (GlobalAppState.isTearDown) {
                 return;
             }
 
-            AppState.isTearDown = true;
+            GlobalAppState.isTearDown = true;
 
         }
 

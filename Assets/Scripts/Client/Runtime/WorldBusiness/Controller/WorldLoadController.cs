@@ -17,7 +17,7 @@ namespace ActSample.Client.World.Controller {
 
         public void Tick(float deltaTime) {
 
-            var em = AppEventCenter.LoginToWorldEM;
+            var em = GlobalAppEventCenter.LoginToWorldEM;
             if (!em.isTrigger) {
                 return;
             }

@@ -1,6 +1,6 @@
 using System;
 
-namespace ActSample.Client {
+namespace ActSample.Client.Facades {
 
     public static class AllNetwork {
 

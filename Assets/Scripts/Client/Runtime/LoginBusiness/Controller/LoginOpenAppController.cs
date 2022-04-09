@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using ActSample.Client.Facades;
 
 namespace ActSample.Client.Login.Controller {
 
@@ -15,11 +16,11 @@ namespace ActSample.Client.Login.Controller {
 
         public void Tick(float deltaTime) {
 
-            if (!AppState.isFresh) {
+            if (!GlobalAppState.isFresh) {
                 return;
             }
 
-            AppState.isFresh = false;
+            GlobalAppState.isFresh = false;
 
             if (loginRepo.TitlePage == null) {
                 var ui = UIManager.Instance;
@@ -34,7 +35,7 @@ namespace ActSample.Client.Login.Controller {
         }
 
         void OnClickEnterGame() {
-            var em = AppEventCenter.LoginToWorldEM;
+            var em = GlobalAppEventCenter.LoginToWorldEM;
             em.isTrigger = true;
             em.worldSignID = "TestScene";
 

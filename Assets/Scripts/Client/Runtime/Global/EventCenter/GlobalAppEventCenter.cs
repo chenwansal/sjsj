@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ActSample.Client {
 
-    public static class AppEventCenter {
+    public static class GlobalAppEventCenter {
 
         public static LoginToWorldEM LoginToWorldEM { get; set; } = new LoginToWorldEM();
 

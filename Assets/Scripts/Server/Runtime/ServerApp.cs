@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using JackFrame;
+using ActSample.Server.Operation.Entry;
 
 namespace ActSample.Server.MainEntry {
 
@@ -9,6 +10,9 @@ namespace ActSample.Server.MainEntry {
 
         // NETWORK
         NetworkEntry networkEntry;
+
+        // OPREATION
+        OperationEntry operationEntry;
 
         void Awake() {
 
@@ -21,13 +25,32 @@ namespace ActSample.Server.MainEntry {
             Application.targetFrameRate = 60;
             Time.fixedDeltaTime = 0.016f;
 
+            // ==== BIND LOG ====
+            PLog.OnLog += Debug.Log;
+            PLog.OnWarning += Debug.LogWarning;
+            PLog.OnError += Debug.LogError;
+            PLog.OnAssert += (condition, msg) => Debug.Assert(condition, msg);
+            PLog.OnAssertWithoutMessage += (condition) => Debug.Assert(condition);
+
             // ==== CTOR ====
+            // - NETWORK
             networkEntry = new NetworkEntry();
 
+            // - OPERATION
+            operationEntry = new OperationEntry();
+            operationEntry.Ctor();
+
             // ==== INJECT ====
+            // - NETWORK
             networkEntry.Inject();
 
+            // - OPERATION
+            operationEntry.Inject();
+
             // ==== INIT ====
+            // - OPERATION
+            operationEntry.Init(gameObject);
+
             GlobalAppState.isInit = true;
 
         }

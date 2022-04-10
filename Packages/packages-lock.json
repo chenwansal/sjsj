@@ -10,7 +10,7 @@
         "com.unity.ide.vscode": "1.2.5",
         "com.unity.nuget.newtonsoft-json": "2.0.0"
       },
-      "hash": "5275cbcef8b7da59b8fe951e215471238f02d66a"
+      "hash": "e2a3172bf03e7afbc23b348f1df2561a82565554"
     },
     "com.unity.addressables": {
       "version": "1.19.18",

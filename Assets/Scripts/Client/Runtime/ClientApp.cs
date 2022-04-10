@@ -23,7 +23,8 @@ namespace ActSample.Client.MainEntry {
 
         void Awake() {
 
-            GlobalAppState.Reset();
+            var appState = GlobalAppRepo.AppState;
+            appState.Reset();
 
             // ==== BIND LOG ====
             PLog.OnLog += Debug.Log;
@@ -70,7 +71,7 @@ namespace ActSample.Client.MainEntry {
                     // - WORLD
                     worldEntry.Init();
 
-                    GlobalAppState.isInit = true;
+                    appState.isInit = true;
 
                 } catch (Exception ex) {
 
@@ -87,7 +88,8 @@ namespace ActSample.Client.MainEntry {
 
         void Update() {
 
-            if (!GlobalAppState.isInit) {
+            var appState = GlobalAppRepo.AppState;
+            if (!appState.isInit) {
                 return;
             }
 
@@ -101,7 +103,8 @@ namespace ActSample.Client.MainEntry {
 
         void FixedUpdate() {
 
-            if (!GlobalAppState.isInit) {
+            var appState = GlobalAppRepo.AppState;
+            if (!appState.isInit) {
                 return;
             }
 
@@ -109,7 +112,8 @@ namespace ActSample.Client.MainEntry {
 
         void LateUpdate() {
 
-            if (!GlobalAppState.isInit) {
+            var appState = GlobalAppRepo.AppState;
+            if (!appState.isInit) {
                 return;
             }
 
@@ -125,11 +129,12 @@ namespace ActSample.Client.MainEntry {
 
         void TearDown() {
 
-            if (GlobalAppState.isTearDown) {
+            var appState = GlobalAppRepo.AppState;
+            if (appState.isTearDown) {
                 return;
             }
 
-            GlobalAppState.isTearDown = true;
+            appState.isTearDown = true;
 
         }
 

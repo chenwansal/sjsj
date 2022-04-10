@@ -2,12 +2,12 @@ using System;
 
 namespace ActSample.Client {
 
-    public static class GlobalAppState {
-        public static bool isInit;
-        public static bool isTearDown;
-        public static bool isFresh;
+    public class AppState {
+        public bool isInit;
+        public bool isTearDown;
+        public bool isFresh;
 
-        public static void Reset() {
+        public void Reset() {
             isInit = false;
             isTearDown = false;
             isFresh = true;

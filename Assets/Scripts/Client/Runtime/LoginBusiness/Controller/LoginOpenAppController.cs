@@ -16,11 +16,12 @@ namespace ActSample.Client.Login.Controller {
 
         public void Tick(float deltaTime) {
 
-            if (!GlobalAppState.isFresh) {
+            var appState = GlobalAppRepo.AppState;
+            if (!appState.isFresh) {
                 return;
             }
 
-            GlobalAppState.isFresh = false;
+            appState.isFresh = false;
 
             if (loginRepo.TitlePage == null) {
                 var ui = UIManager.Instance;

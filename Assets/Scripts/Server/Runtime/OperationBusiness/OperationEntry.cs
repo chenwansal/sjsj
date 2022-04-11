@@ -23,6 +23,10 @@ namespace ActSample.Server.Operation.Entry {
         public void Init(GameObject appRoot) {
             operationController.Init(appRoot);
         }
+
+        public void Tick(float deltaTime) {
+            operationController.Tick(deltaTime);
+        }
     }
 
 }

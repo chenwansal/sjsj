@@ -75,6 +75,9 @@ namespace ActSample.Server.MainEntry {
                 return;
             }
 
+            float dt = Time.deltaTime;
+            operationEntry.Tick(dt);
+
         }
 
         void FixedUpdate() {

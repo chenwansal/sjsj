@@ -8,42 +8,61 @@ namespace ActSample.Server {
 
         static Pool<PlayerEntity> playerPool;
         static MultiKeySortedDictionary<int, string, PlayerEntity> allPlayer;
+        static SortedDictionary<int, PlayerEntity> idDic;
+        static Dictionary<string, PlayerEntity> tokenDic;
 
-        public static void Ctor() {
+        static GlobalAppRepo() {
             playerPool = new Pool<PlayerEntity>(() => PlayerEntity.Create(), 16);
+            idDic = new SortedDictionary<int, PlayerEntity>();
+            tokenDic = new Dictionary<string, PlayerEntity>();
             allPlayer = new MultiKeySortedDictionary<int, string, PlayerEntity>();
         }
 
-        public static PlayerEntity NewPlayer() {
+        public static PlayerEntity CreatePlayer() {
             return playerPool.Take();
         }
 
-        public static void AddPlayer(PlayerEntity entity) {
-            if (!allPlayer.ContainsKeyPrimary(entity.connID)) {
-                allPlayer.Add(entity.connID, entity.token, entity);
-            }
+        public static void AddPlayerByIDAndToken(PlayerEntity entity) {
+            idDic.Add(entity.connID, entity);
+            tokenDic.Add(entity.token, entity);
+        }
+
+        public static void AddPlayerByID(PlayerEntity entity) {
+            idDic.Add(entity.connID, entity);
         }
 
         public static bool ContainsPlayerByToken(string token) {
-            return allPlayer.ContainsKeySub(token);
+            return tokenDic.ContainsKey(token);
         }
 
         public static bool ContainsPlayerByConnID(int connID) {
-            return allPlayer.ContainsKeyPrimary(connID);
+            return idDic.ContainsKey(connID);
+        }
+
+        public static bool GetPlayerEntityByConnID(int connID, out PlayerEntity entity) {
+            return idDic.TryGetValue(connID, out entity);
+        }
+
+        public static bool GetPlayerEntityByToken(string token, out PlayerEntity entity) {
+            return tokenDic.TryGetValue(token, out entity);
         }
 
         public static void Remove(PlayerEntity entity) {
-            allPlayer.Remove(entity.connID, entity.token);
+            idDic.Remove(entity.connID);
+            tokenDic.Remove(entity.token);
             playerPool.Return(entity);
         }
 
-        public static void RemoveByID(int connID) {
-            bool hasPlayer = allPlayer.ContainsKeyPrimary(connID);
-            if (hasPlayer) {
-                allPlayer.TryGetValueFromPrimary(connID, out var entity);
-                allPlayer.Remove(connID, entity.token);
-                playerPool.Return(entity);
-            }
+        public static int GetOnlinePlayerCount() {
+            return idDic.Count;
+        }
+
+        public static int GetCachedPlayerCount() {
+            return tokenDic.Count;
+        }
+
+        public static void RemovePlayerIdKey(int connID) {
+            idDic.Remove(connID);
         }
         
     }

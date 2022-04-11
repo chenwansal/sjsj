@@ -23,12 +23,12 @@ namespace ActSample.Client.Login.Controller {
 
         public void Tick(float deltaTime) {
 
-            var appState = GlobalAppRepo.AppState;
-            if (!appState.isFresh) {
-                return;
-            }
+        }
 
-            appState.isFresh = false;
+        void OnConnected(ConnectResMessage msg) {
+            var player = GlobalAppRepo.PlayerEntity;
+            player.connID = msg.connID;
+            player.token = msg.token;
 
             if (loginRepo.TitlePage == null) {
                 var ui = UIManager.Instance;
@@ -37,12 +37,6 @@ namespace ActSample.Client.Login.Controller {
                 loginRepo.TitlePage = titlePage;
             }
 
-        }
-
-        void OnConnected(ConnectResMessage msg) {
-            var player = GlobalAppRepo.PlayerEntity;
-            player.connID = msg.connID;
-            player.token = msg.token;
         }
 
         void OnClickEnterGame() {

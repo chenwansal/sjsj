@@ -25,6 +25,8 @@ namespace ActSample.Client.Login.Entry {
 
         public void Init() {
 
+            openAppController.Init();
+
         }
 
         public void Tick(float deltaTime) {

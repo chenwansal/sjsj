@@ -24,6 +24,29 @@ namespace ActSample.Server.Operation.Controller {
             operationPanel.OnStopServerHandle += OnStopServer;
         }
 
+        public void Tick(float deltaTime) {
+
+            var operationPanel = operationRepo.OperationPanel;
+            if (operationPanel == null) {
+                return;
+            }
+
+            int beforePlayerCount = GlobalAppState.onlinePlayerCount;
+            int nowPlayerCount = GlobalAppRepo.GetCachedPlayerCount();
+            if (beforePlayerCount != nowPlayerCount) {
+                GlobalAppState.onlinePlayerCount = nowPlayerCount;
+                operationPanel.SetOnlinePlayerCount(nowPlayerCount);
+            }
+
+            beforePlayerCount = GlobalAppState.cachedPlayerCount;
+            nowPlayerCount = GlobalAppRepo.GetCachedPlayerCount();
+            if (beforePlayerCount != nowPlayerCount) {
+                GlobalAppState.cachedPlayerCount = nowPlayerCount;
+                operationPanel.SetCachedPlayerCount(nowPlayerCount);
+            }
+
+        }
+
         void OnStartServer(int port) {
             var server = AllNetwork.NetworkServer;
             server.StartListen(port);

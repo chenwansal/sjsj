@@ -36,7 +36,7 @@ namespace ActSample.Client.MainEntry {
             // ==== CTOR ====
             // - NETWORK
             networkEntry = new NetworkEntry();
-            
+
             // - UI
             uiEntry = new UIEntry();
 

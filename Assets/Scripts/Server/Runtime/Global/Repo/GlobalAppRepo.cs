@@ -24,6 +24,14 @@ namespace ActSample.Server {
             }
         }
 
+        public static bool ContainsPlayerByToken(string token) {
+            return allPlayer.ContainsKeySub(token);
+        }
+
+        public static bool ContainsPlayerByConnID(int connID) {
+            return allPlayer.ContainsKeyPrimary(connID);
+        }
+
         public static void Remove(PlayerEntity entity) {
             allPlayer.Remove(entity.connID, entity.token);
             playerPool.Return(entity);

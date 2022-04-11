@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using ActSample.Client.Facades;
+using ActSample.Protocol;
 
 namespace ActSample.Client.Login.Controller {
 
@@ -12,6 +13,12 @@ namespace ActSample.Client.Login.Controller {
 
         public void Inject(LoginRepo loginRepo) {
             this.loginRepo = loginRepo;
+        }
+
+        public void Init() {
+            var client = AllNetwork.NetworkClient;
+            client.On<ConnectResMessage>(OnConnected);
+            client.Connect("127.0.0.1", 4399);
         }
 
         public void Tick(float deltaTime) {
@@ -30,9 +37,12 @@ namespace ActSample.Client.Login.Controller {
                 loginRepo.TitlePage = titlePage;
             }
 
-            var client = AllNetwork.NetworkClient;
-            client.Connect("127.0.0.1", 4399);
+        }
 
+        void OnConnected(ConnectResMessage msg) {
+            var player = GlobalAppRepo.PlayerEntity;
+            player.connID = msg.connID;
+            player.token = msg.token;
         }
 
         void OnClickEnterGame() {
@@ -41,7 +51,6 @@ namespace ActSample.Client.Login.Controller {
             em.worldSignID = "TestScene";
 
             loginRepo.TitlePage.CloseAndDestroy();
-
         }
 
     }

@@ -18,7 +18,6 @@ namespace ActSample.Protocol.EditorTool {
 
             string protocolDir = Path.Combine(Application.dataPath, "Scripts", "Protocols");
             GenerateMessage(protocolDir);
-            AssetDatabase.Refresh();
             GenerateService(protocolDir);
 
         }
@@ -42,7 +41,7 @@ namespace ActSample.Protocol.EditorTool {
 
             var asm = Assembly.GetAssembly(typeof(ProtocolService));
             var types = asm.GetTypes();
-            types = types.FindAll(value => value.GetInterface(typeof(IJackMessage<>).Name) != null);
+            types = types.FindAll(value => value.GetCustomAttribute(typeof(JackMessageObjectAttribute)) != null);
             const string MESSAGE_DICTIONARY_NAME = "messageInfoDic";
             const string FUNC_DICTIONARY_NAME = "generateDic";
             for (int i = 0; i < types.Length; i += 1) {

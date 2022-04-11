@@ -1,25 +1,31 @@
-using JackBuffer;
 using System;
+using JackBuffer;
 
 namespace ActSample.Protocol
 {
     [JackMessageObject]
-    public struct ConnectReqMessage : IJackMessage<ConnectReqMessage>
+    public struct ConnectResMessage : IJackMessage<ConnectResMessage>
     {
         public string token;
+        public int connID;
+        public byte status;
         public void WriteTo(byte[] dst, ref int offset)
         {
             BufferWriter.WriteUTF8String(dst, token, ref offset);
+            BufferWriter.WriteInt32(dst, connID, ref offset);
+            BufferWriter.WriteUInt8(dst, status, ref offset);
         }
 
         public void FromBytes(byte[] src, ref int offset)
         {
             token = BufferReader.ReadUTF8String(src, ref offset);
+            connID = BufferReader.ReadInt32(src, ref offset);
+            status = BufferReader.ReadUInt8(src, ref offset);
         }
 
         public int GetEvaluatedSize(out bool isCertain)
         {
-            int count = 2;
+            int count = 7;
             isCertain = false;
             if (token != null)
             {

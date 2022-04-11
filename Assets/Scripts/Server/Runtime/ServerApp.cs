@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using JackFrame;
 using ActSample.Server.Operation.Entry;
+using ActSample.Server.Login.Entry;
 
 namespace ActSample.Server.MainEntry {
 
@@ -13,6 +14,9 @@ namespace ActSample.Server.MainEntry {
 
         // OPREATION
         OperationEntry operationEntry;
+
+        // LOGIN
+        LoginEntry loginEntry;
 
         void Awake() {
 
@@ -40,6 +44,10 @@ namespace ActSample.Server.MainEntry {
             operationEntry = new OperationEntry();
             operationEntry.Ctor();
 
+            // - LOGIN
+            loginEntry = new LoginEntry();
+            loginEntry.Ctor();
+
             // ==== INJECT ====
             // - NETWORK
             networkEntry.Inject();
@@ -47,9 +55,15 @@ namespace ActSample.Server.MainEntry {
             // - OPERATION
             operationEntry.Inject();
 
+            // - LOGIN
+            loginEntry.Inject();
+
             // ==== INIT ====
             // - OPERATION
             operationEntry.Init(gameObject);
+
+            // - LOGIN
+            loginEntry.Init();
 
             GlobalAppState.isInit = true;
 

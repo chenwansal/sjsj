@@ -48,9 +48,13 @@ namespace ActSample.Protocol
 
         private void Init()
         {
-            messageInfoDic.Add(typeof(TestReqMessage), 0);
+            messageInfoDic.Add(typeof(ConnectReqMessage), 0);
+            generateDic.Add(typeof(ConnectReqMessage), new Func<ConnectReqMessage>(() => new ConnectReqMessage()));
+            messageInfoDic.Add(typeof(ConnectResMessage), 1);
+            generateDic.Add(typeof(ConnectResMessage), new Func<ConnectResMessage>(() => new ConnectResMessage()));
+            messageInfoDic.Add(typeof(TestReqMessage), 2);
             generateDic.Add(typeof(TestReqMessage), new Func<TestReqMessage>(() => new TestReqMessage()));
-            messageInfoDic.Add(typeof(TestResMessage), 1);
+            messageInfoDic.Add(typeof(TestResMessage), 3);
             generateDic.Add(typeof(TestResMessage), new Func<TestResMessage>(() => new TestResMessage()));
         }
     }

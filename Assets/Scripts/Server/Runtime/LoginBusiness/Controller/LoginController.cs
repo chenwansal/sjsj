@@ -1,10 +1,10 @@
 using System;
 using UnityEngine;
 using JackFrame;
-using ActSample.Server.Facades;
-using ActSample.Protocol;
+using SJSJ.Server.Facades;
+using SJSJ.Protocol;
 
-namespace ActSample.Server.Login.Controller {
+namespace SJSJ.Server.Login.Controller {
 
     public class LoginController {
 

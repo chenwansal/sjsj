@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace ActSample.Client.World {
+namespace SJSJ.Client.World {
 
     public class WorldRepo {
 

@@ -2,9 +2,9 @@ using System;
 using UnityEngine;
 using JackFrame.Network;
 using JackBuffer;
-using ActSample.Protocol;
+using SJSJ.Protocol;
 
-namespace ActSample.Client {
+namespace SJSJ.Client {
 
     public class NetworkClient : TcpClient {
 

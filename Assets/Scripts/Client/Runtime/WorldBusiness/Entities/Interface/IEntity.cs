@@ -1,6 +1,6 @@
 using System;
 
-namespace ActSample.Client.World {
+namespace SJSJ.Client.World {
 
     public interface IEntity {
         EntityType EntityType { get; }

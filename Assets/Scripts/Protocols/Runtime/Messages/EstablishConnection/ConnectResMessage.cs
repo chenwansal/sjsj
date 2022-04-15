@@ -1,7 +1,7 @@
 using System;
 using JackBuffer;
 
-namespace ActSample.Protocol
+namespace SJSJ.Protocol
 {
     [JackMessageObject]
     public struct ConnectResMessage : IJackMessage<ConnectResMessage>

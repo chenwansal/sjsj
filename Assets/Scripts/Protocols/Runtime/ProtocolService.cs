@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using JackBuffer;
 
-namespace ActSample.Protocol
+namespace SJSJ.Protocol
 {
     public class ProtocolService : IProtocolService
     {

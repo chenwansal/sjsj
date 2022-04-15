@@ -1,9 +1,9 @@
 using System;
 using JackBuffer;
-using ActSample.Protocol;
+using SJSJ.Protocol;
 using JackFrame.Network;
 
-namespace ActSample.Server {
+namespace SJSJ.Server {
 
     public class NetworkServer : TcpServer {
 

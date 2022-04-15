@@ -1,9 +1,9 @@
 using System;
 using System.Threading.Tasks;
 using UnityEngine;
-using ActSample.Client.World.Controller;
+using SJSJ.Client.World.Controller;
 
-namespace ActSample.Client.World.Entry {
+namespace SJSJ.Client.World.Entry {
 
     public class WorldEntry {
 

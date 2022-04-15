@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using JackFrame;
 
-namespace ActSample.Server.Operation {
+namespace SJSJ.Server.Operation {
 
     public class OperationPanel : MonoBehaviour {
 

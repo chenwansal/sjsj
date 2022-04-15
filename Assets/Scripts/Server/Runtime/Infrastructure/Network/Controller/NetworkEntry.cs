@@ -1,9 +1,9 @@
 using System;
 using UnityEngine;
 using JackBuffer;
-using ActSample.Server.Facades;
+using SJSJ.Server.Facades;
 
-namespace ActSample.Server {
+namespace SJSJ.Server {
 
     public class NetworkEntry {
 

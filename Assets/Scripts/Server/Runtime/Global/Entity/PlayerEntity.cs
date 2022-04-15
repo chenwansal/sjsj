@@ -1,6 +1,6 @@
 using System;
 
-namespace ActSample.Server {
+namespace SJSJ.Server {
 
     public class PlayerEntity {
 

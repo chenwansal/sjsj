@@ -1,8 +1,8 @@
 using System;
 using UnityEngine;
-using ActSample.Server.Operation.Controller;
+using SJSJ.Server.Operation.Controller;
 
-namespace ActSample.Server.Operation.Entry {
+namespace SJSJ.Server.Operation.Entry {
 
     public class OperationEntry {
 

@@ -1,11 +1,11 @@
 using System;
 using UnityEngine;
-using ActSample.Client.World.Entry;
-using ActSample.Client.Login.Entry;
-using ActSample.Client.Facades;
+using SJSJ.Client.World.Entry;
+using SJSJ.Client.Login.Entry;
+using SJSJ.Client.Facades;
 using JackFrame;
 
-namespace ActSample.Client.MainEntry {
+namespace SJSJ.Client.MainEntry {
 
     public class ClientApp : MonoBehaviour {
 

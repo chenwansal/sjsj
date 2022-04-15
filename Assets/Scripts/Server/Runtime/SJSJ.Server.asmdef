@@ -1,7 +1,12 @@
 {
-    "name": "ActSample.Client.Sample",
+    "name": "SJSJ.Server",
     "rootNamespace": "",
-    "references": [],
+    "references": [
+        "GUID:030dc892bb11cba4e9d4354d92f29b70",
+        "GUID:698de13ac41894b4faa41653eef13f2b",
+        "GUID:72e53efc3db839d40ab26cd2f7fe819d",
+        "GUID:bd70514b727715a4fa1e0f4a9a9726e2"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

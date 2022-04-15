@@ -1,9 +1,9 @@
 using System;
 using UnityEngine;
-using ActSample.Client.Facades;
-using ActSample.Protocol;
+using SJSJ.Client.Facades;
+using SJSJ.Protocol;
 
-namespace ActSample.Client.Login.Controller {
+namespace SJSJ.Client.Login.Controller {
 
     public class LoginOpenAppController {
 

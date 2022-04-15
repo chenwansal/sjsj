@@ -1,6 +1,6 @@
 using System;
 
-namespace ActSample.Client {
+namespace SJSJ.Client {
 
     public enum UIPageID {
         Title

@@ -1,9 +1,9 @@
 using System;
 using UnityEngine;
-using ActSample.Server.Facades;
+using SJSJ.Server.Facades;
 using JackFrame;
 
-namespace ActSample.Server.Operation.Controller {
+namespace SJSJ.Server.Operation.Controller {
 
     public class OperationController {
 

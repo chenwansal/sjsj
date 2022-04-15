@@ -1,8 +1,8 @@
 using System;
-using ActSample.Client.Facades;
-using ActSample.Protocol;
+using SJSJ.Client.Facades;
+using SJSJ.Protocol;
 
-namespace ActSample.Client {
+namespace SJSJ.Client {
 
     public class NetworkEntry {
 

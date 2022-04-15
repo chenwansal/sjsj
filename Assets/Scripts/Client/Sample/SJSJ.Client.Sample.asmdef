@@ -1,9 +1,7 @@
 {
-    "name": "ActSample.Protocol",
+    "name": "SJSJ.Client.Sample",
     "rootNamespace": "",
-    "references": [
-        "GUID:72e53efc3db839d40ab26cd2f7fe819d"
-    ],
+    "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

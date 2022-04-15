@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace ActSample.Sample {
+namespace SJSJ.Sample {
 
     public class SampleApp : MonoBehaviour {
 

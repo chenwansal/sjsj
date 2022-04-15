@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace ActSample.Server.Operation {
+namespace SJSJ.Server.Operation {
 
     public class OperationRepo {
 

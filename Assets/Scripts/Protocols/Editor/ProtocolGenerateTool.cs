@@ -9,7 +9,7 @@ using JackBuffer.Editor;
 using JackAST;
 using JackFrame;
 
-namespace ActSample.Protocol.EditorTool {
+namespace SJSJ.Protocol.EditorTool {
 
     public class ProtocolGenerateTool {
 

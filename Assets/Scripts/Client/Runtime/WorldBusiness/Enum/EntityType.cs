@@ -1,6 +1,6 @@
 using System;
 
-namespace ActSample.Client.World {
+namespace SJSJ.Client.World {
 
     public enum EntityType {
         None,

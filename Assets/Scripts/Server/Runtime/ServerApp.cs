@@ -2,10 +2,10 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using JackFrame;
-using ActSample.Server.Operation.Entry;
-using ActSample.Server.Login.Entry;
+using SJSJ.Server.Operation.Entry;
+using SJSJ.Server.Login.Entry;
 
-namespace ActSample.Server.MainEntry {
+namespace SJSJ.Server.MainEntry {
 
     public class ServerApp : MonoBehaviour {
 

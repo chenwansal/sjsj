@@ -1,7 +1,7 @@
 using System;
-using ActSample.Client.Login.Controller;
+using SJSJ.Client.Login.Controller;
 
-namespace ActSample.Client.Login.Entry {
+namespace SJSJ.Client.Login.Entry {
 
     public class LoginEntry {
 

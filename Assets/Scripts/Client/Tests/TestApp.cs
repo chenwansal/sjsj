@@ -6,7 +6,7 @@ using UnityEngine.TestTools;
 using NUnit.Framework;
 using JackFrame;
 
-namespace ActSample.Client.Tests {
+namespace SJSJ.Client.Tests {
 
     public class TestApp {
 

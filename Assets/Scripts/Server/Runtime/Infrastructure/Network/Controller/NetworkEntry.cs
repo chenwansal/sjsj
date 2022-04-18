@@ -20,5 +20,12 @@ namespace SJSJ.Server {
             server.Tick();
         }
 
+        public void TearDown() {
+
+            var server = AllNetwork.NetworkServer;
+            server.StopListen();
+            
+        }
+
     }
 }

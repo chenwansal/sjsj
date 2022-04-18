@@ -1,4 +1,5 @@
 using System;
+using JackFrame;
 using SJSJ.Client.Facades;
 using SJSJ.Protocol;
 
@@ -11,6 +12,7 @@ namespace SJSJ.Client {
         public void Inject() {
 
             NetworkClient client = new NetworkClient(1024);
+            client.OnDisconnectedHandle += OnDisconnected;
             client.OnConnectedHandle += OnConnected;
 
             AllNetwork.Inject(client);
@@ -24,10 +26,29 @@ namespace SJSJ.Client {
 
         }
 
+        public void TearDown() {
+
+            var client = AllNetwork.NetworkClient;
+            client.Disconnect();
+            
+        }
+
         void OnConnected() {
             var player = GlobalAppRepo.PlayerEntity;
             var client = AllNetwork.NetworkClient;
             client.Send(new ConnectReqMessage { token = player.token });
+
+            PLog.Log("CONNECTED");
+
+        }
+
+        void OnDisconnected() {
+
+            var client = AllNetwork.NetworkClient;
+            client.Reconnect();
+
+            PLog.Log("RECONNECTING");
+
         }
 
     }

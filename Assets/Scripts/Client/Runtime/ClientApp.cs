@@ -136,6 +136,8 @@ namespace SJSJ.Client.MainEntry {
 
             appState.isTearDown = true;
 
+            networkEntry.TearDown();
+
         }
 
     }

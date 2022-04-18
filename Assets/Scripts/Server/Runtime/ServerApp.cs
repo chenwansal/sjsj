@@ -104,6 +104,9 @@ namespace SJSJ.Server.MainEntry {
             }
 
             GlobalAppState.isTearDown = true;
+
+            networkEntry.TearDown();
+            
         }
 
     }

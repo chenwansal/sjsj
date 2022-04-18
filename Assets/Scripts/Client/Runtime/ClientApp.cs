@@ -1,6 +1,6 @@
 using System;
 using UnityEngine;
-using SJSJ.Client.World.Entry;
+using SJSJ.Client.Battle.Entry;
 using SJSJ.Client.Login.Entry;
 using SJSJ.Client.Facades;
 using JackFrame;
@@ -18,8 +18,8 @@ namespace SJSJ.Client.MainEntry {
         // LOGIN
         LoginEntry loginEntry;
 
-        // WORLD
-        WorldEntry worldEntry;
+        // BATTLE
+        BattleEntry battleEntry;
 
         void Awake() {
 
@@ -43,8 +43,8 @@ namespace SJSJ.Client.MainEntry {
             // - LOGIN
             loginEntry = new LoginEntry();
 
-            // - WORLD
-            worldEntry = new WorldEntry();
+            // - BATTLE
+            battleEntry = new BattleEntry();
 
             // ==== INJECT ====
             // - NETWORK
@@ -56,8 +56,8 @@ namespace SJSJ.Client.MainEntry {
             // - LOGIN
             loginEntry.Inject();
 
-            // - WORLD
-            worldEntry.Inject();
+            // - BATTLE
+            battleEntry.Inject();
 
             // ==== INIT ====
             Action initAction = async () => {
@@ -72,8 +72,8 @@ namespace SJSJ.Client.MainEntry {
                     // - LOGIN
                     loginEntry.Init();
 
-                    // - WORLD
-                    worldEntry.Init();
+                    // - BATTLE
+                    battleEntry.Init();
 
                     appState.isInit = true;
 
@@ -101,7 +101,7 @@ namespace SJSJ.Client.MainEntry {
             networkEntry.Tick();
 
             loginEntry.Tick(dt);
-            worldEntry.Tick(dt);
+            battleEntry.Tick(dt);
 
         }
 

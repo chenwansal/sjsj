@@ -3,11 +3,11 @@ using UnityEngine;
 using UnityEngine.ResourceManagement.ResourceProviders;
 using JackFrame;
 
-namespace SJSJ.Client.World {
+namespace SJSJ.Client.Battle {
 
-    public class WorldGo : MonoBehaviour, IEntity {
+    public class BattleGo : MonoBehaviour, IEntity {
         
-        public EntityType EntityType => EntityType.World;
+        public EntityType EntityType => EntityType.Battle;
 
         int entityID;
         public int EntityID => entityID;
@@ -16,12 +16,12 @@ namespace SJSJ.Client.World {
         public SceneInstance sceneInstance;
 
         // CHILDREN
-        public WorldChildrenComponent ChildrenComponent { get; private set; }
+        public BattleChildrenComponent ChildrenComponent { get; private set; }
 
         void Awake() {
 
-            ChildrenComponent = new WorldChildrenComponent();
-            
+            ChildrenComponent = new BattleChildrenComponent();
+
         }
 
         public void LoadChildren() {

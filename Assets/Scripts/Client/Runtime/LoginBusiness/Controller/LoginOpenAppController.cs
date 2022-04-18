@@ -39,9 +39,9 @@ namespace SJSJ.Client.Login.Controller {
         }
 
         void OnClickEnterGame() {
-            var em = GlobalAppEventCenter.LoginToWorldEM;
-            em.isTrigger = true;
-            em.worldSignID = "TestScene";
+            var ev = GlobalAppEventCenter.LoginToBattleEvent;
+            ev.isTrigger = true;
+            ev.sceneSignID = "TestScene";
 
             loginRepo.TitlePage.CloseAndDestroy();
         }

@@ -2,25 +2,25 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace SJSJ.Client.World {
+namespace SJSJ.Client.Battle {
 
-    public class WorldRepo {
+    public class BattleRepo {
 
-        Dictionary<int/* EntityID */, WorldGo> all;
-        WorldGo current;
+        Dictionary<int/* EntityID */, BattleGo> all;
+        BattleGo current;
 
-        public WorldRepo() {
-            this.all = new Dictionary<int, WorldGo>();
+        public BattleRepo() {
+            this.all = new Dictionary<int, BattleGo>();
         }
 
-        public void Add(WorldGo go) {
+        public void Add(BattleGo go) {
             if (all.ContainsKey(go.EntityID)) {
                 return;
             }
             all.Add(go.EntityID, go);
         }
 
-        public void SetCurrentWorld(WorldGo go) {
+        public void SetCurrentBattle(BattleGo go) {
             this.current = go;
         }
 
@@ -28,11 +28,11 @@ namespace SJSJ.Client.World {
             return all.Count;
         }
 
-        public WorldGo GetCurrentWorld() {
+        public BattleGo GetCurrentBattle() {
             return current;
         }
 
-        public WorldGo Get(int entityID) {
+        public BattleGo Get(int entityID) {
             all.TryGetValue(entityID, out var go);
             return go;
         }

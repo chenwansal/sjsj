@@ -6,6 +6,7 @@ namespace SJSJ.Client {
         None,
         Camera,
         World,
+        Battle,
     }
 
 }

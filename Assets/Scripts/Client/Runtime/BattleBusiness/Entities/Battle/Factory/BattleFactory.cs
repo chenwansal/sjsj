@@ -6,19 +6,19 @@ using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.ResourceProviders;
 using JackFrame;
 
-namespace SJSJ.Client.World {
+namespace SJSJ.Client.Battle {
 
-    public class WorldFactory {
+    public class BattleFactory {
 
-        public async Task<WorldGo> LoadWorld(string key) {
+        public async Task<BattleGo> LoadBattle(string key) {
             var res = await Addressables.LoadSceneAsync(key, LoadSceneMode.Additive).Task;
-            var go = res.Scene.GetRootGameObjects().Find(value => value.GetComponent<WorldGo>() != null);
-            WorldGo worldGo = go.GetComponent<WorldGo>();
+            var go = res.Scene.GetRootGameObjects().Find(value => value.GetComponent<BattleGo>() != null);
+            BattleGo worldGo = go.GetComponent<BattleGo>();
             worldGo.sceneInstance = res;
             return worldGo;
         }
 
-        public async Task UnloadWorld(WorldGo worldGo) {
+        public async Task UnloadBattle(BattleGo worldGo) {
             await Addressables.UnloadSceneAsync(worldGo.sceneInstance).Task;
         }
 

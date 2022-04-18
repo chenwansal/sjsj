@@ -4,13 +4,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using JackFrame;
 
-namespace SJSJ.Client.World {
+namespace SJSJ.Client.Battle {
 
-    public class WorldChildrenComponent {
+    public class BattleChildrenComponent {
 
         List<CameraGoEntity> cameraGoEntities;
 
-        public WorldChildrenComponent() {
+        public BattleChildrenComponent() {
             this.cameraGoEntities = new List<CameraGoEntity>();
         }
 

@@ -19,6 +19,11 @@ namespace SJSJ.Client {
 
         }
 
+        public void Init() {
+            var client = AllNetwork.NetworkClient;
+            client.Connect("127.0.0.1", 4399);
+        }
+
         public void Tick() {
 
             var client = AllNetwork.NetworkClient;
@@ -30,7 +35,7 @@ namespace SJSJ.Client {
 
             var client = AllNetwork.NetworkClient;
             client.Disconnect();
-            
+
         }
 
         void OnConnected() {

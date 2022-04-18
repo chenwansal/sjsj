@@ -18,7 +18,6 @@ namespace SJSJ.Client.Login.Controller {
         public void Init() {
             var client = AllNetwork.NetworkClient;
             client.On<ConnectResMessage>(OnConnected);
-            client.Connect("127.0.0.1", 4399);
         }
 
         public void Tick(float deltaTime) {

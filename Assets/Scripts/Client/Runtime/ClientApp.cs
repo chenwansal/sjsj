@@ -62,6 +62,10 @@ namespace SJSJ.Client.MainEntry {
             // ==== INIT ====
             Action initAction = async () => {
                 try {
+
+                    // - NETWORK
+                    networkEntry.Init();
+
                     // - UI
                     await uiEntry.InitAssets();
 

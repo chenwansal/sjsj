@@ -1,9 +1,10 @@
 using System;
 
-namespace SJSJ.Client.World {
+namespace SJSJ.Client {
 
     public enum EntityType {
         None,
+        Camera,
         World,
     }
 

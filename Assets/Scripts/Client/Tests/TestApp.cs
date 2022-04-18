@@ -14,6 +14,9 @@ namespace SJSJ.Client.Tests {
         public static WaitForSeconds tick = new WaitForSeconds(0.016f);
 
         public static void SetUp() {
+            PLog.OnLog += Debug.Log;
+            PLog.OnWarning += Debug.LogWarning;
+            PLog.OnError += Debug.LogError;
             PLog.OnAssert += (condition, msg) => Assert.That(condition, msg);
             PLog.OnAssertWithoutMessage += (condition) => Assert.That(condition);
         }

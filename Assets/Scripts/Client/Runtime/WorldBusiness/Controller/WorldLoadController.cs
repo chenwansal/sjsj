@@ -25,10 +25,19 @@ namespace SJSJ.Client.World.Controller {
             em.isTrigger = false;
 
             Action action = async () => {
-                var go = await worldFactory.LoadWorld(em.worldSignID);
-                worldRepo.Add(go);
 
+                var go = await worldFactory.LoadWorld(em.worldSignID);
                 PLog.Log("WORLD SPAWNED");
+
+                go.LoadChildren();
+
+                worldRepo.Add(go);
+                int count = worldRepo.Count();
+                if (count == 1) {
+                    worldRepo.SetCurrentWorld(go);
+                } else {
+                    PLog.Warning($"世界数量有多余: {count}");
+                }
 
             };
 

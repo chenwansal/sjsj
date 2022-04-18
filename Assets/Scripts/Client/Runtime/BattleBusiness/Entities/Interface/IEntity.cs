@@ -1,6 +1,6 @@
 using System;
 
-namespace SJSJ.Client.World {
+namespace SJSJ.Client.Battle {
 
     public interface IEntity {
         EntityType EntityType { get; }

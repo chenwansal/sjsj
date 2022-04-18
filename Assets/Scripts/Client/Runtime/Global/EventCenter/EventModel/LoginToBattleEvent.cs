@@ -2,9 +2,9 @@ using System;
 
 namespace SJSJ.Client {
 
-    public class LoginToWorldEM {
+    public class LoginToBattleEvent {
 
-        public string worldSignID;
+        public string sceneSignID;
 
         public bool isTrigger;
 

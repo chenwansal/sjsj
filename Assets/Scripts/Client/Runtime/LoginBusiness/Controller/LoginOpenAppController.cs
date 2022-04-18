@@ -18,7 +18,6 @@ namespace SJSJ.Client.Login.Controller {
         public void Init() {
             var client = AllNetwork.NetworkClient;
             client.On<ConnectResMessage>(OnConnected);
-            client.Connect("127.0.0.1", 4399);
         }
 
         public void Tick(float deltaTime) {
@@ -40,9 +39,9 @@ namespace SJSJ.Client.Login.Controller {
         }
 
         void OnClickEnterGame() {
-            var em = GlobalAppEventCenter.LoginToWorldEM;
-            em.isTrigger = true;
-            em.worldSignID = "TestScene";
+            var ev = GlobalAppEventCenter.LoginToBattleEvent;
+            ev.isTrigger = true;
+            ev.sceneSignID = "TestScene";
 
             loginRepo.TitlePage.CloseAndDestroy();
         }

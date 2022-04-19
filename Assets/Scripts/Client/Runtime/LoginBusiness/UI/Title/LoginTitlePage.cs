@@ -6,7 +6,7 @@ using JackFrame;
 
 namespace SJSJ.Client.Login {
 
-    public class TitlePage : FrameUIPanelBase {
+    public class LoginTitlePage : FrameUIPanelBase {
 
         public override int Id => (int)UIPageID.Title;
         public override UIRootLevel RootLevel => UIRootLevel.Page;

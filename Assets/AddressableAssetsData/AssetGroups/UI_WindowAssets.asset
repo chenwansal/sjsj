@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: UI_WindowAssets
+  m_EditorClassIdentifier: 
+  m_GroupName: UI_WindowAssets
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 5a3329824ca3c8d43a92e9e89f6185fc
+  m_SerializeEntries:
+  - m_GUID: 4254c259d0fb1274f950fb2f54b08a88
+    m_Address: MoveJoystickWindow
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - UILayoutAssets
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 370a6c0e3ed60634b87af6e281579b24, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: ba1b57abacd78c84e90849d2b1ccf4ae, type: 2}
+    - {fileID: 11400000, guid: 5219c91340677174a87642065ae95119, type: 2}

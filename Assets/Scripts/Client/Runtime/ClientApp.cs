@@ -12,6 +12,9 @@ namespace SJSJ.Client.MainEntry {
         // NETWORK
         NetworkEntry networkEntry;
 
+        // INPUT
+        InputEntry inputEntry;
+
         // UI
         UIEntry uiEntry;
 
@@ -22,6 +25,8 @@ namespace SJSJ.Client.MainEntry {
         BattleEntry battleEntry;
 
         void Awake() {
+
+            DontDestroyOnLoad(gameObject);
 
             var appState = GlobalAppRepo.AppState;
             appState.Reset();
@@ -37,6 +42,9 @@ namespace SJSJ.Client.MainEntry {
             // - NETWORK
             networkEntry = new NetworkEntry();
 
+            // - INPUT
+            inputEntry = new InputEntry();
+
             // - UI
             uiEntry = new UIEntry();
 
@@ -49,6 +57,9 @@ namespace SJSJ.Client.MainEntry {
             // ==== INJECT ====
             // - NETWORK
             networkEntry.Inject();
+
+            // - INPUT
+            inputEntry.Inject();
 
             // - UI
             uiEntry.Inject();
@@ -86,7 +97,6 @@ namespace SJSJ.Client.MainEntry {
             };
 
             initAction.Invoke();
-
 
         }
 

@@ -6,7 +6,7 @@ namespace SJSJ.Client.Login {
 
     public class LoginRepo {
 
-        public TitlePage TitlePage { get; set; }
+        public LoginTitlePage LoginTitlePage { get; set; }
 
         public LoginRepo() {}
 

@@ -29,11 +29,11 @@ namespace SJSJ.Client.Login.Controller {
             player.connID = msg.connID;
             player.token = msg.token;
 
-            if (loginRepo.TitlePage == null) {
+            if (loginRepo.LoginTitlePage == null) {
                 var ui = UIManager.Instance;
-                TitlePage titlePage = ui.OpenPage<TitlePage>((UIPageID.Title));
+                LoginTitlePage titlePage = ui.OpenPage<LoginTitlePage>((UIPageID.Title));
                 titlePage.OnClickEnterGameHandle += OnClickEnterGame;
-                loginRepo.TitlePage = titlePage;
+                loginRepo.LoginTitlePage = titlePage;
             }
 
         }
@@ -43,7 +43,7 @@ namespace SJSJ.Client.Login.Controller {
             ev.isTrigger = true;
             ev.sceneSignID = "TestScene";
 
-            loginRepo.TitlePage.CloseAndDestroy();
+            loginRepo.LoginTitlePage.CloseAndDestroy();
         }
 
     }

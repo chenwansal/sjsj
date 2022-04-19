@@ -255,7 +255,7 @@ GameObject:
   - component: {fileID: 1116150709981434204}
   - component: {fileID: 2388102026555913545}
   m_Layer: 5
-  m_Name: TitlePage
+  m_Name: LoginTitlePage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

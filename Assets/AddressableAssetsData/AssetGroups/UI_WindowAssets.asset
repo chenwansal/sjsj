@@ -22,6 +22,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - UILayoutAssets
+  - m_GUID: 74f8c7727d41c5a46b398d9539752d96
+    m_Address: ComparationWindow
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - UILayoutAssets
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 370a6c0e3ed60634b87af6e281579b24, type: 2}
   m_SchemaSet:

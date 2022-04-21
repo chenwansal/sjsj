@@ -1,6 +1,6 @@
 using System;
 
-namespace SJSJ.Client {
+namespace SJSJ.Server {
 
     public enum EntityType {
         None,

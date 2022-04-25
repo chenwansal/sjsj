@@ -47,6 +47,13 @@ namespace SJSJ.Server {
             return tokenDic.TryGetValue(token, out entity);
         }
 
+        public static int GetConnIDByToken(string token) {
+            if (tokenDic.TryGetValue(token, out PlayerEntity entity)) {
+                return entity.connID;
+            }
+            return -1;
+        }
+
         public static void Remove(PlayerEntity entity) {
             idDic.Remove(entity.connID);
             tokenDic.Remove(entity.token);

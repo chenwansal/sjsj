@@ -4,6 +4,7 @@ using UnityEngine;
 using JackFrame;
 using SJSJ.Server.Operation.Entry;
 using SJSJ.Server.Login.Entry;
+using SJSJ.Server.Comparation.Entry;
 
 namespace SJSJ.Server.MainEntry {
 
@@ -17,6 +18,9 @@ namespace SJSJ.Server.MainEntry {
 
         // LOGIN
         LoginEntry loginEntry;
+
+        // COMPARATION
+        ComparationEntry comparationEntry;
 
         void Awake() {
 
@@ -48,6 +52,10 @@ namespace SJSJ.Server.MainEntry {
             loginEntry = new LoginEntry();
             loginEntry.Ctor();
 
+            // - COMPARATION
+            comparationEntry = new ComparationEntry();
+            comparationEntry.Ctor();
+
             // ==== INJECT ====
             // - NETWORK
             networkEntry.Inject();
@@ -58,12 +66,18 @@ namespace SJSJ.Server.MainEntry {
             // - LOGIN
             loginEntry.Inject();
 
+            // - COMPARATION
+            comparationEntry.Inject();
+
             // ==== INIT ====
             // - OPERATION
             operationEntry.Init(gameObject);
 
             // - LOGIN
             loginEntry.Init();
+
+            // - COMPARATION
+            comparationEntry.Init();
 
             GlobalAppState.isInit = true;
 

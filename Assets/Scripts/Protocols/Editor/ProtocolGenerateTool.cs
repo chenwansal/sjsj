@@ -20,6 +20,8 @@ namespace SJSJ.Protocol.EditorTool {
             GenerateMessage(protocolDir);
             GenerateService(protocolDir);
 
+            Debug.Log("Has Generated Protocols");
+
         }
 
         static void GenerateMessage(string protocolDir) {

@@ -12,28 +12,52 @@ namespace SJSJ.Client.Login {
         public override UIRootLevel RootLevel => UIRootLevel.Page;
         public override bool IsUnique => true;
 
-        Button enterGameButton;
+        InputField loginUsernameInputField;
+        InputField loginPasswordInputField;
+        Button loginButton;
 
-        public event Action OnClickEnterGameHandle;
+        InputField registerUsernameInputField;
+        InputField registerPasswordInputField;
+        Button registerButton;
+
+        public event Action<string/*username*/, string/*password*/> OnClickLoginHandle;
+        public event Action<string/*username*/, string/*password*/> OnClickRegisterHandle;
 
         void Awake() {
 
-            var bd = transform.Find("BD");
-            enterGameButton = bd.Find("EnterGameButton").GetComponent<Button>();
+            var loginBD = transform.Find("LoginBD");
+            loginUsernameInputField = loginBD.GetChild(0).GetComponent<InputField>();
+            loginPasswordInputField = loginBD.GetChild(1).GetComponent<InputField>();
+            loginButton = loginBD.GetChild(2).GetComponent<Button>();
 
-            PLog.Assert(enterGameButton != null);
+            var registerBD = transform.Find("RegisterBD");
+            registerUsernameInputField = registerBD.GetChild(0).GetComponent<InputField>();
+            registerPasswordInputField = registerBD.GetChild(1).GetComponent<InputField>();
+            registerButton = registerBD.GetChild(2).GetComponent<Button>();
 
-            enterGameButton.onClick.AddListener(() => {
-                OnClickEnterGameHandle.Invoke();
+            PLog.Assert(loginUsernameInputField != null);
+            PLog.Assert(loginPasswordInputField != null);
+            
+            PLog.Assert(registerUsernameInputField != null);
+            PLog.Assert(registerPasswordInputField != null);
+
+            loginButton.onClick.AddListener(() => {
+                string username = loginUsernameInputField.text;
+                string password = loginPasswordInputField.text;
+                OnClickLoginHandle.Invoke(username, password);
+            });
+
+            registerButton.onClick.AddListener(() => {
+                string username = registerUsernameInputField.text;
+                string password = registerPasswordInputField.text;
+                OnClickRegisterHandle.Invoke(username, password);
             });
 
         }
 
         void Start() {
-#if !UNITY_INCLUDE_TESTS
-            PLog.Assert(OnClickEnterGameHandle != null);
-#endif
-
+            PLog.Assert(OnClickLoginHandle != null);
+            PLog.Assert(OnClickRegisterHandle != null);
         }
 
     }

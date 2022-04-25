@@ -25,6 +25,7 @@ namespace SJSJ.Client.Login.Controller {
         }
 
         void OnConnected(ConnectResMessage msg) {
+            
             var player = GlobalAppRepo.PlayerEntity;
             player.connID = msg.connID;
             player.token = msg.token;
@@ -32,18 +33,19 @@ namespace SJSJ.Client.Login.Controller {
             if (loginRepo.LoginTitlePage == null) {
                 var ui = UIManager.Instance;
                 LoginTitlePage titlePage = ui.OpenPage<LoginTitlePage>((UIPageID.Title));
-                titlePage.OnClickEnterGameHandle += OnClickEnterGame;
+                titlePage.OnClickRegisterHandle += OnClickRegister;
+                titlePage.OnClickLoginHandle += OnClickLogin;
                 loginRepo.LoginTitlePage = titlePage;
             }
 
         }
 
-        void OnClickEnterGame() {
-            var ev = GlobalAppEventCenter.LoginToBattleEvent;
-            ev.isTrigger = true;
-            ev.sceneSignID = "TestScene";
+        void OnClickRegister(string username, string password) {
 
-            loginRepo.LoginTitlePage.CloseAndDestroy();
+        }
+
+        void OnClickLogin(string username, string password) {
+
         }
 
     }
